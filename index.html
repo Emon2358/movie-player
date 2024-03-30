@@ -6,20 +6,19 @@
     <title>YouTube Audio Player</title>
 </head>
 <body>
-    <form onsubmit="playVideo(); return false;">
+    <form onsubmit="playAudio(); return false;">
         <label for="video_id">YouTube Video ID:</label>
         <input type="text" id="video_id" name="video_id" required>
         <button type="submit">Play Audio</button>
     </form>
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-        <iframe id="video_player" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="" frameborder="0" allowfullscreen></iframe>
-    </div>
+    <audio id="audio_player" controls autoplay loop style="display: none;"></audio>
 
     <script>
-        function playVideo() {
+        function playAudio() {
             var videoId = document.getElementById("video_id").value;
-            var iframeSrc = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&controls=0&loop=1&playlist=" + videoId;
-            document.getElementById("video_player").src = iframeSrc;
+            var audioSrc = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&controls=0&loop=1&playlist=" + videoId;
+            document.getElementById("audio_player").src = audioSrc;
+            document.getElementById("audio_player").style.display = "block";
         }
     </script>
 </body>
