@@ -10,16 +10,27 @@
     />
     <style>
       body {
-        background-color: #f8f9fa;
+        background-color: #0d0d0d; /* Background color inverted */
+        color: #fff; /* Text color inverted */
         padding: 20px;
       }
       .container {
-        max-width: 600px;
+        max-width: 800px; /* Increased max-width */
         margin: 0 auto;
-        background-color: #fff;
-        padding: 20px;
+        padding: 40px; /* Increased padding */
         border-radius: 8px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); /* Inverted box-shadow */
+        position: relative; /* Add position relative for positioning */
+      }
+      .logo-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .logo-img {
+        width: 150px; /* Increased image size */
+        margin-right: 20px;
+        background-color: #0d0d0d; /* Background color inverted */
       }
       label {
         font-weight: bold;
@@ -32,6 +43,8 @@
         border: 1px solid #ced4da;
         border-radius: 4px;
         box-sizing: border-box;
+        background-color: #3a3a3a; /* Input background color inverted */
+        color: #fff; /* Input text color inverted */
       }
       button[type="submit"] {
         padding: 10px 20px;
@@ -48,7 +61,13 @@
   </head>
   <body>
     <div class="container">
-      <h2 class="mb-4">Movie Player</h2>
+      <div class="logo-container">
+        <img
+          src="https://cdn.discordapp.com/attachments/1223667753739878585/1223808903234715709/0AE5EA66-CEB6-4B18-9FB0-932A7BBEED63.png?ex=661b33db&is=6608bedb&hm=75efbd42aec556204c8b6f0ee89ecd417d4d5b7bb7b43b6dff01b60c888462eb&"
+          class="logo-img"
+        />
+        <h2 class="mb-0">Movie Player</h2>
+      </div>
       <form onsubmit="playVideo(); return false;">
         <div class="form-group">
           <label for="video_id">Enter Movie Video ID:</label>
