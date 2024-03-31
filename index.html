@@ -1,24 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>movie Player</title>
-</head>
-<body>
-    <form onsubmit="playVideo(); return false;">
-        <label for="video_id">Movie Video ID:</label>
-        <input type="text" id="video_id" name="video_id" required>
-        <button type="submit">Play Audio</button>
-    </form>
-    <iframe id="video_player" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Player</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        padding: 20px;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        font-weight: bold;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      button[type="submit"] {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="mb-4">Movie Player</h2>
+      <form onsubmit="playVideo(); return false;">
+        <div class="form-group">
+          <label for="video_id">Enter Movie Video ID:</label>
+          <input
+            type="text"
+            id="video_id"
+            name="video_id"
+            class="form-control"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Play Video</button>
+      </form>
+      <div class="embed-responsive embed-responsive-16by9 mt-4">
+        <iframe
+          id="video_player"
+          class="embed-responsive-item"
+          src=""
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
 
     <script>
-        function playVideo() {
-            var videoId = document.getElementById("video_id").value;
-            var iframeSrc = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&controls=0&loop=1&playlist=" + videoId;
-            document.getElementById("video_player").src = iframeSrc;
-        }
+      function playVideo() {
+        var videoId = document.getElementById("video_id").value;
+        var iframeSrc =
+          "https://www.youtube.com/embed/" +
+          videoId +
+          "?autoplay=1&controls=0&loop=1&playlist=" +
+          videoId;
+        document.getElementById("video_player").src = iframeSrc;
+      }
     </script>
-</body>
+  </body>
 </html>
